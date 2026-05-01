@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['check_availability']))
         }
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 70px auto 10px;
             background: white;
             padding: 30px;
             border-radius: 10px;

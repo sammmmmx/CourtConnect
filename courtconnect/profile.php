@@ -104,8 +104,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_profile'])) {
             padding: 20px;
         }
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 70px auto 10px;
             background: white;
             padding: 30px;
             border-radius: 10px;

@@ -108,6 +108,8 @@ $recent_bookings = mysqli_query($link, "SELECT b.*, u.name as user_name, c.name 
             border-radius: 10px;
             margin-bottom: 20px;
             text-align: center;
+            position: sticky;
+            top: 10px
         }
         .nav-menu a {
             color: white;
