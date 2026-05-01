@@ -25,7 +25,8 @@ if (isset($_GET['change_status'])) {
 if (isset($_GET['delete_booking'])) {
     $booking_id = mysqli_real_escape_string($link, $_GET['booking_id']);
     
-    $delete_sql = "DELETE FROM bookings WHERE id = $booking_id";
+    // $delete_sql = "DELETE FROM bookings WHERE id = $booking_id";
+    $delete_sql = "UPDATE bookings SET status = 'Deleted' WHERE id = $booking_id";
     if (mysqli_query($link, $delete_sql)) {
         $status_message = "Booking deleted successfully!";
     } else {
@@ -38,6 +39,7 @@ $bookings_query = "SELECT b.*, u.name as user_name, u.email, u.phone, c.name as 
                    FROM bookings b 
                    JOIN users u ON b.user_id = u.id 
                    JOIN courts c ON b.court_id = c.id 
+                   WHERE b.status !='Deleted'
                    ORDER BY b.booking_date DESC, b.start_time DESC";
 $bookings_result = mysqli_query($link, $bookings_query);
 ?>
